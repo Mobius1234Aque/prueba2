@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18 # Especifica la versión de Node.js que necesitas
+    commands:
+      - npm install # Instala las dependencias del proyecto
+
+  build:
+    commands:
+      - npm test # Ejecuta las pruebas Jest
+
+artifacts:
+  files:
+    - "**/*" # Incluye todos los archivos en el directorio de trabajo como artefactos
