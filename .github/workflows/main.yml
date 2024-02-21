@@ -17,5 +17,5 @@ jobs:
         uses: aws-actions/aws-codebuild-run-build@v1
         with:
           project-name: protyoosos
-          env-variables-overrides: |
-            NODE_ENV=testing  # Variables de entorno si es necesario, por ejemplo, para configurar el entorno de pruebas
+          env-variables-overrides: NODE_ENV=testing # Variables de entorno si es necesario, por ejemplo, para configurar el entorno de pruebas
+          region: us-west-2 # Cambia 'us-west-2' por la región de AWS que deseas utilizar
