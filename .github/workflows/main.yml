@@ -1,0 +1,21 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main  # Puedes cambiar esto según la rama que quieras monitorear
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Sistema operativo en el que se ejecutarán las pruebas
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # Acción para obtener el código del repositorio
+
+    - name: Run tests with AWS CodeBuild
+      uses: aws-actions/aws-codebuild-run-build@v2
+      with:
+        project-name: protyoosos
+        env-variables-overrides: |
+          NODE_ENV=testing  # Variables de entorno si es necesario, por ejemplo, para configurar el entorno de pruebas
