@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18 # Especifica la versión de Node.js que necesitas
+      nodejs: 14 # Especifica la versión de Node.js que necesitas
     commands:
       - npm install # Instala las dependencias del proyecto
 
