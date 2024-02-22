@@ -16,7 +16,7 @@ jobs:
       - name: Run tests with AWS CodeBuild
         env:
           AWS_REGION: us-west-2
-          AWS_ACCESS_KEY_ID: ${{ secrets.AKIAVKG5SLESZV5HRHE4 }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.6Rg7FnuUrzFBRx4Ug+acYyAUYbYZ9QUdF260/sL9 }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           aws codebuild start-build --project-name protyoosos --environment-variables-override "name=NODE_ENV,value=testing"
