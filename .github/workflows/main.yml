@@ -3,19 +3,20 @@ name: Run Tests
 on:
   push:
     branches:
-      - main # Puedes cambiar esto según la rama que quieras monitorear
+      - main
 
 jobs:
   test:
-    runs-on: ubuntu-latest # Sistema operativo en el que se ejecutarán las pruebas
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2 # Acción para obtener el código del repositorio
+        uses: actions/checkout@v2
 
       - name: Run tests with AWS CodeBuild
-        uses: aws-actions/aws-codebuild-run-build@v1
-        with:
-          project-name: protyoosos
-          env-variables-overrides: NODE_ENV=testing # Variables de entorno si es necesario, por ejemplo, para configurar el entorno de pruebas
-          region: us-west-2 # Cambia 'us-west-2' por la región de AWS que deseas utilizar
+        env:
+          AWS_REGION: us-west-2
+          AWS_ACCESS_KEY_ID: ${{ secrets.AKIAVKG5SLESZV5HRHE4 }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.6Rg7FnuUrzFBRx4Ug+acYyAUYbYZ9QUdF260/sL9 }}
+        run: |
+          aws codebuild start-build --project-name protyoosos --environment-variables-override "name=NODE_ENV,value=testing"
