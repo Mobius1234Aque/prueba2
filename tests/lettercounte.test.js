@@ -1,18 +1,18 @@
 const countLetters = require('../src/lettercounter.js');
 
-test('counts the number of letters in a string', () => {
+test('cuenta el número de letras en una cadena', () => {
   const text = 'Hello World!';
   const expectedCount = { 'h': 1, 'e': 1, 'l': 3, 'o': 2, 'w': 1, 'r': 1, 'd': 1 };
   expect(countLetters(text)).toEqual(expectedCount);
 });
 
-test('counts the number of letters in an empty string', () => {
+test('cuenta el número de letras en una cadena vacía', () => {
   const text = '';
   const expectedCount = {};
   expect(countLetters(text)).toEqual(expectedCount);
 });
 
-test('counts the number of letters in a string with special characters', () => {
+test('cuenta el número de letras en una cadena con caracteres especiales', () => {
   const text = 'The quick brown fox jumps over the lazy dog!';
   const expectedCount = {
     't': 2, 'h': 2, 'e': 3, 'q': 1, 'u': 2, 'i': 1, 'c': 1, 'k': 1, 'b': 1, 'r': 2,
@@ -21,5 +21,3 @@ test('counts the number of letters in a string with special characters', () => {
   };
   expect(countLetters(text)).toEqual(expectedCount);
 });
-
-console.log('FOKIN MEE')
