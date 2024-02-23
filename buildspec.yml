@@ -7,13 +7,9 @@ phases:
     commands:
       - export AWS_REGION=us-east-1
       - npm install
+      - chmod +x ./node_modules/.bin/jest
 
   build:
     commands:
       - npm test
       - npm audit
-      - jest
-
-artifacts:
-  files:
-    - "**/*"
