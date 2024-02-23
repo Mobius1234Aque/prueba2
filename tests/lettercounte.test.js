@@ -21,3 +21,5 @@ test('counts the number of letters in a string with special characters', () => {
   };
   expect(countLetters(text)).toEqual(expectedCount);
 });
+
+console.log('FOKIN MEE')
