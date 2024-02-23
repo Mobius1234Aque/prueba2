@@ -5,14 +5,14 @@ phases:
     runtime-versions:
       nodejs: 14
     commands:
-      - export AWS_REGION=us-east-1 # Reemplaza 'your_region' con la región de AWS que estés utilizando
+      - export AWS_REGION=us-east-1
       - npm install
 
   build:
     commands:
       - npm test
-      - npm audit fix
-      - npm jest
+      - npm audit
+      - jest
 
 artifacts:
   files:
